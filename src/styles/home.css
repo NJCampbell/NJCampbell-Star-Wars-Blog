@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-content: space-between;
+    
+}
+.containerHome {
+    color: aliceblue;
+}
+.planetsContainer {
+    color: aliceblue;
+}
+.vehiclesContainer {
+    color: aliceblue;
+}
