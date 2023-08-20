@@ -1,19 +1,26 @@
 body {
     background-color: black;
 }
+.headings {
+    color: #FFE919;
+}
 
 .container {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 15px;
+    row-gap: 15px; */
     justify-content: center;
-    align-content: space-between;
-    
+    align-content: space-evenly;
+    color: rgb(17, 17, 17);    
 }
-.containerHome {
-    color: aliceblue;
-}
-.planetsContainer {
-    color: aliceblue;
-}
-.vehiclesContainer {
-    color: aliceblue;
+/* .rowContainer {
+    column-gap: 15px;
+    row-gap: 15px;
+} */
+
+.starwarsLogo {
+    max-height: 75px;
+    width: auto;
+    padding-left: 30px;
 }
