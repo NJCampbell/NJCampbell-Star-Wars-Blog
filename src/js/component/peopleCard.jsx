@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -23,7 +24,9 @@ const PeopleCard = (props) => {
                     <p className="card-text">Gender: {props.gender}</p>
                     <p className="card-text">Hair color: {props.hairColor}</p>
                     <p className="card-text">Eye color: {props.eyeColor}</p>
-                    <a href="#" className="btn btn-primary">Learn more!</a>
+                    <Link to="/demo">
+                        <button className="btn btn-primary">Learn more!</button>
+                    </Link>
                     <a href="#" className="btn">❤️</a>
                 </div>
             </div>

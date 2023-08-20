@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 import "../../styles/home.css";
-import Card from "../component/card.jsx";
+
 import PeopleCard from "../component/peopleCard.jsx";
 import PlanetCard from "../component/planetsCard.jsx";
 import VehicleCard from "../component/vehicleCard.jsx";
@@ -28,6 +28,7 @@ export const Home = () => {
 										key={index}
 										uid={person.uid}
 										name={person.name}
+										url={person.url}
 										gender={person.gender}
 										hairColor={person.hair_color}
 										eyeColor={person.eye_color}
@@ -81,6 +82,8 @@ export const Home = () => {
 						</div>
 					</div>
 				</div>
+				
+
 			</div>
 
 

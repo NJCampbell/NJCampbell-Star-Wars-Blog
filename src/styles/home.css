@@ -4,6 +4,10 @@ body {
 .headings {
     color: #FFE919;
 }
+/* #favoritesButton {
+    margin-right: 10%;
+    background-color: #FFE919;
+} */
 
 .container {
     display: flex;
@@ -23,4 +27,7 @@ body {
     max-height: 75px;
     width: auto;
     padding-left: 30px;
+}
+.indContainer {
+    display: inline-block;
 }
