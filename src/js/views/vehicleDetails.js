@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-const IndividualVehicle = () => {
+const VehicleDetails = () => {
     const { store, actions } = useContext(Context)
     return (
         <>
-        <div className="indContainer">
+            <div className="indContainer">
                 <div className="card" style={{ width: "18rem" }}>
                     <img className="card-img-top" src="..." alt="Card image cap" />
                     <div className="card-body">
@@ -22,9 +22,12 @@ const IndividualVehicle = () => {
                         <a href="#" className="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
+                <Link to="/">
+                    <button className="btn btn-primary">Back home</button>
+                </Link>
             </div>
         </>
     )
 }
 
-export default IndividualVehicle;
+export default VehicleDetails;

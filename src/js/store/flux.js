@@ -4,7 +4,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
-			peopleDetails: [],
+			personDetails: {},
+			planetDetails: {},
+			vehicleDetails: {},
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -29,29 +31,41 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(data);
 				setStore({ vehicles: data.results })
 			},
-			// fetchIndividualPerson: (index) => {
-			// 	fetch("https://www.swapi.tech/api/people/" + index)
-			// 		.then(response => {
-			// 			if (!response) throw Error(response.statusText);
-			// 			return response.json();
-			// 		})
-			// 		.then(data => {
-			// 			let newPeopleArr = [...newPeopleArr, data.result.properties];
-			// 			console.log(data);
-			// 			setStore({ peopleDetails: newPeopleArr })
-			// 		})
-			// 		.catch(error => console.log("ERROR MESSAGE @ fetchIndividualPerson()", error))
-			// },
-			// fetchIndividualPerson: async (index) => {
-			// 	const response = await fetch("https://swapi.dev/api/people/" + index);
-			// 	let data = await response.json();
-			// 	.then(data => {
-			// 					newPersonArray = [...newPersonArray, data.result.properties];
-			// 					setStore({ peopleDetails: newPeopleArr })
-			// 				})
-			// 	console.log(data);
-			// 	setStore({ personDetails: newPersonArray })
-			// },
+			fetchPersonDetails: async (personId) => {
+				const response = await fetch(`https://swapi.dev/api/people/${personId}`);
+				let personData = await response.json();
+				console.log(personData);
+				getActions().updatePersonDetails({ data: personData });
+
+			},
+			updatePersonDetails: (personData) => {
+				const store = getStore();
+				setStore({ ...store, personDetails: personData });
+			},
+			fetchPlanetDetails: async (planetId) => {
+				const response = await fetch(`https://swapi.dev/api/people/${planetId}`);
+				let planetData = await response.json();
+				console.log(planetData);
+				getActions().updatePlanetDetails();
+
+			},
+			updatePlanetDetails: (planetData) => {
+				const store = getStore();
+				setStore({ ...store, planetDetails: planetData });
+			},
+			fetchVehicleDetails: async (vehicleId) => {
+				const response = await fetch(`https://swapi.dev/api/people/${vehicleId}`);
+				let vehicleData = await response.json();
+				console.log(vehicleData);
+				getActions().updateVehicleDetails();
+
+			},
+			updateVehicleDetails: (vehicleData) => {
+				const store = getStore();
+				setStore({ ...store, vehicleDetails: vehicleData });
+			},
+
+
 
 
 
@@ -63,7 +77,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().fetchPeople();
 				getActions().fetchPlanets();
 				getActions().fetchVehicles();
-				// getActions().fetchIndividualPerson();
+				getActions().fetchPersonDetails();
+				getActions().fetchPlanetDetails();
+				getActions().fetchVehicleDetails();
+
 			},
 			// changeColor: (index, color) => {
 			// 	//get the store
@@ -84,3 +101,4 @@ const getState = ({ getStore, getActions, setStore }) => {
 };
 
 export default getState;
+

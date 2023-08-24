@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const IndividualPlanet = () => {
+const PlanetDetails = () => {
     const { store, actions } = useContext(Context)
     return (
         <>
-        <div className="indContainer">
+            <div className="indContainer">
                 <div className="card" style={{ width: "18rem" }}>
                     <img className="card-img-top" src="..." alt="Card image cap" />
                     <div className="card-body">
@@ -22,8 +23,11 @@ const IndividualPlanet = () => {
                         <a href="#" className="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
+                <Link to="/">
+                    <button className="btn btn-primary">Back home</button>
+                </Link>
             </div></>
     )
 }
 
-export default IndividualPlanet;
+export default PlanetDetails;
