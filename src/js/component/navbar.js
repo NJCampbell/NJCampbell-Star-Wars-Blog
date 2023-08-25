@@ -4,15 +4,11 @@ import { Context } from "../store/appContext";
 
 import Star_Wars_Logo from "../../img/Star_Wars_Logo.svg.png";
 import "../../styles/home.css";
-import AutocompleteSearchBar from "../component/searchBar";
+// import SearchBar from "../component/searchBar";
 
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
-	// function deleteItem(index) {
-	// 	actions.removeFavorite(index);
-	// }
 
 	return (
 		<>
@@ -20,6 +16,8 @@ export const Navbar = () => {
 				<Link to="/">
 					<img className="starwarsLogo" src={Star_Wars_Logo} />
 				</Link>
+
+				{/* <SearchBar /> */}
 
 				<div className="ml-auto" style={{ position: "relative" }}>
 					<div className="deleteButton">
