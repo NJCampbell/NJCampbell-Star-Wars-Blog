@@ -12,7 +12,7 @@ const PeopleCard = (props) => {
 
 
         <>
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" id="cardBody" style={{ width: "18rem" }}>
                 <img className="card-img-top" src={props.img} alt="Card image cap"
                     onError={(e) => { e.target.src = 'https://starwars-visualguide.com/assets/img/placeholder.jpg' }}
                 />
@@ -23,9 +23,9 @@ const PeopleCard = (props) => {
                     <p className="card-text">Eye color: {props.eyeColor}</p>
 
                     <Link to={`/people/${props.uid}`}>
-                        <button className="btn btn-primary">Learn more!</button>
+                        <button className="btn btn-outline-light">Learn more!</button>
                     </Link>
-                    <a href="#" className="btn">❤️</a>
+                    <button className="btn" onClick={() => actions.addFavorite(props.name)}>❤️</button>
                 </div>
             </div>
         </>

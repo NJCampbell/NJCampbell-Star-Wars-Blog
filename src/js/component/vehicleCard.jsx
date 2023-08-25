@@ -6,13 +6,11 @@ import PropTypes from "prop-types";
 
 
 const VehicleCard = (props) => {
-    const { store, actions } = useContext(Context)
-
-    // let cardImgUrl = "https://starwars-visualguide.com/assets/img/" + props.cardType + "/" + props.uid + ".jpg";
+    const { store, actions } = useContext(Context);
 
     return (
         <>
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" id="cardBody" style={{ width: "18rem" }}>
                 <img className="card-img-top" src={props.img} alt="Card image cap"
                     onError={(e) => { e.target.src = 'https://starwars-visualguide.com/assets/img/placeholder.jpg' }}
                 />
@@ -21,8 +19,13 @@ const VehicleCard = (props) => {
                     <p className="card-text">Model: {props.model}</p>
                     <p className="card-text">Manufacturer: {props.manufacturer}</p>
                     <p className="card-text">Cost in credits: {props.costCredits}</p>
-                    <a href="#" className="btn btn-primary">More details!</a>
-                    <a href="#" className="btn">❤️</a>
+                    <Link to={`/vehicles/${props.uid}`}>
+                        <button className="btn btn-outline-light">Learn more!</button>
+                    </Link>
+
+                    <button className="btn" onClick={() => actions.addFavorite(props.name)}>❤️</button>
+
+
                 </div>
             </div>
         </>

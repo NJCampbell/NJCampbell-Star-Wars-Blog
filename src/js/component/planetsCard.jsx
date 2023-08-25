@@ -6,23 +6,23 @@ import PropTypes from "prop-types";
 
 
 const PlanetCard = (props) => {
-    const { store, actions } = useContext(Context)
-
-    // let cardImgUrl = "https://starwars-visualguide.com/assets/img/" + props.cardType + "/" + props.uid + ".jpg";
+    const { store, actions } = useContext(Context);
 
     return (
         <>
-            <div className="card" style={{ width: "18rem" }}>
-                <img className="card-img-top" src={props.img} alt="Card image cap" 
-                onError={(e) => { e.target.src = 'https://starwars-visualguide.com/assets/img/placeholder.jpg' }}
+            <div className="card" id="cardBody" style={{ width: "18rem" }}>
+                <img className="card-img-top" src={props.img} alt="Card image cap"
+                    onError={(e) => { e.target.src = 'https://starwars-visualguide.com/assets/img/placeholder.jpg' }}
                 />
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <p className="card-text">Population: {props.population}</p>
                     <p className="card-text">Terrain: {props.terrain}</p>
-                                       
-                    <a href="#" className="btn btn-primary">Tell me more!</a>
-                    <a href="#" className="btn">❤️</a>
+                    <Link to={`/planets/${props.uid}`}>
+                        <button className="btn btn-outline-light">Learn more!</button>
+                    </Link>
+
+                    <button className="btn" onClick={() => actions.addFavorite(props.name)}>❤️</button>
                 </div>
             </div>
         </>

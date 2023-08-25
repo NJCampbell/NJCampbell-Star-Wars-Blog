@@ -1,33 +1,68 @@
 body {
-    background-color: black;
+
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/frmilky_way_galaxy_star-image-kybd7u7d.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=3e93a726e0d9f7b70fcf557f5cfc9dc7");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
 }
+
 .headings {
     color: #FFE919;
+    margin-top: 20px;
 }
-/* #favoritesButton {
-    margin-right: 10%;
-    background-color: #FFE919;
-} */
+
+.navbar {
+    margin-right: 60px;
+}
+
+.dropdown-menu {
+    background-color: black;
+
+}
+
+.dropdown-item {
+    color: #FFE919;
+}
+
+.svg.bi.bi-trash {
+    background-color: black;
+    color: #FFE919;
+}
 
 .container {
     display: flex;
     flex-direction: column;
-    /* column-gap: 15px;
-    row-gap: 15px; */
     justify-content: center;
     align-content: space-evenly;
-    color: rgb(17, 17, 17);    
+    color: rgb(17, 17, 17);
 }
-/* .rowContainer {
-    column-gap: 15px;
-    row-gap: 15px;
-} */
 
 .starwarsLogo {
     max-height: 75px;
     width: auto;
     padding-left: 30px;
 }
-.indContainer {
-    display: inline-block;
+
+#cardBody {
+    color: #FFE919;
+    margin-top: 15px;
+    background: rgba(5, 5, 5, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5.9px);
+
+}
+
+.detailsContainer {
+    background: rgba(5, 5, 5, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5.9px);
+    padding: 20px 20px 20px 30px;
+}
+
+li.col {
+    font-size: 1.75rem;
 }
